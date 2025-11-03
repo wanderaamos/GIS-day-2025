@@ -41,10 +41,30 @@
     </ul>
   </section>
 
-  <section id="register">
-    <h2>Register Now</h2>
-    <iframe src="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/1WiLml-kb2xWfke_fggKCVZQV17r6L2W7DW9oUYgG2RE/edit/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
+  <h2>Register Now</h2>
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Organization:</label>
+    <input type="text" name="organization">
+
+    <label>Role:</label>
+    <select name="role">
+      <option>Student</option>
+      <option>Educator</option>
+      <option>Professional</option>
+      <option>Other</option>
+    </select>
+
+    <label>Dietary Needs:</label>
+    <textarea name="dietary"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
 
   <footer>
     <p>Questions? Email us at <a href="mailto:wanderaamos@gmail.com">wanderaamos@gmail.com</a></p>
@@ -53,3 +73,4 @@
 
 </body>
 </html>
+
