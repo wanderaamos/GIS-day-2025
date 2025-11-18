@@ -2,148 +2,268 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GIS Day Ngong 2025 — Thrive Together: Building Resilient Futures. Join us Nov 20 for workshops, keynotes, student showcases, and networking.">
   <title>GIS Day Ngong 2025</title>
   <style>
+    :root {
+      --brand-color: #00796b;
+      --muted-bg: #f4f4f4;
+      --card-bg: #ffffff;
+      --accent-bg: #e0f7fa;
+      --footer-bg: #eeeeee;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: var(--muted-bg);
+      color: #111;
+      line-height: 1.4;
     }
+
+    a { color: var(--brand-color); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     header, section, footer {
-      padding: 40px;
+      padding: 40px 0;
     }
+
     header {
-      background: #e0f7fa;
+      background: var(--accent-bg);
       text-align: center;
     }
-    section {
-      background: #ffffff;
+
+    main > section {
+      background: var(--card-bg);
       margin-bottom: 20px;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 rgba(0,0,0,0); /* placeholder for future elevation */
     }
+
     footer {
-      background: #eeeeee;
+      background: var(--footer-bg);
       text-align: center;
+      padding: 20px 0;
     }
-    a.button {
+
+    .button {
       display: inline-block;
       padding: 10px 20px;
-      background: #00796b;
+      background: var(--brand-color);
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      margin-top: 16px;
+    }
+
+    img.banner {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .media {
       margin-top: 20px;
     }
-    iframe {
-      border: 0;
+
+    .responsive-iframe {
       width: 100%;
       height: 300px;
-      margin-top: 20px;
+      border: 0;
+      border-radius: 6px;
     }
+
+    .big-iframe {
+      height: 600px;
+      border: 0;
+      border-radius: 6px;
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
+      margin: 0;
     }
+
     ul li {
       margin: 10px 0;
       font-size: 16px;
     }
-    img.banner {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+
     .fade-in {
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 800ms ease-in;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+
     #countdown {
       font-size: 24px;
       font-weight: bold;
-      color: #00796b;
+      color: var(--brand-color);
       margin-top: 10px;
+    }
+
+    .sr-only {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 700px) {
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 20px;
+      }
+      .responsive-iframe { height: 320px; }
+    }
+
+    /* Respect user's reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { animation: none; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <header class="fade-in">
-    <h1>GIS Day Ngong 2025</h1>
-    <p><strong>Thrive Together: Building Resilient Futures</strong></p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTt7xUt4TFcsgcbOvgrDX1ncdfZDb90vwviOiIvZf8iwPljQ/viewform" class="button" target="_blank">Register Now</a>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/GIS_Day_logo.svg/1200px-GIS_Day_logo.svg.png" alt="GIS Day Banner" class="banner">
+  <a class="sr-only" href="#main">Skip to main content</a>
+
+  <header class="fade-in" role="banner">
+    <div class="container">
+      <h1>GIS Day Ngong 2025</h1>
+      <p><strong>Thrive Together: Building Resilient Futures</strong></p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTt7xUt4TFcsgcbOvgrDX1ncdfZDb90vwviOiIvZf8iwPljQ/viewform"
+         class="button"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Register for GIS Day (opens in a new tab)">
+        Register Now
+      </a>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/GIS_Day_logo.svg/1200px-GIS_Day_logo.svg.png"
+        alt="GIS Day logo and banner"
+        class="banner"
+        loading="lazy">
+    </div>
   </header>
 
-  <section class="fade-in">
-    <h2>About GIS Day</h2>
-    <p>Join us in Ngong Town on November 20th for a day of exploration, learning, and networking around GIS technology. Whether you're a student, professional, or enthusiast, there's something for everyone!</p>
-  </section>
+  <main id="main" class="container" role="main">
 
-  <section class="fade-in">
-    <h2>Countdown to GIS Day</h2>
-    <div id="countdown">Loading countdown...</div>
-  </section>
+    <section class="fade-in" aria-labelledby="about-heading">
+      <h2 id="about-heading">About GIS Day</h2>
+      <p>
+        Join us in Ngong Town on November 20th for a day of exploration, learning, and networking around GIS technology.
+        Whether you're a student, professional, or enthusiast, there are sessions and hands-on workshops for all levels.
+        Expect keynote talks, practical mapping workshops, a student project showcase, and networking opportunities with refreshments.
+      </p>
+    </section>
 
-  <section class="fade-in">
-    <h2>Location</h2>
-    <p>Venue: physicall in Ngong Town Hall and Virtully on google meet</p>
-    <iframe src="https://www.google.com/maps?q=Ngong+Town+Hall&output=embed"></iframe>
-  </section>
-  
-  <h3>GIS Day Videos</h3>
-<iframe 
-    src="https://storymaps.arcgis.com/briefings/01e83d2e643b4606892b6cf3419f4dc0" 
-    width="100%" 
-    height="600" 
-    style="border:none;">
-</iframe>
+    <section class="fade-in" aria-labelledby="countdown-heading">
+      <h2 id="countdown-heading">Countdown to GIS Day</h2>
+      <div id="countdown" aria-live="polite" role="status">Loading countdown...</div>
+    </section>
 
+    <section class="fade-in two-col" aria-labelledby="location-heading">
+      <div>
+        <h2 id="location-heading">Location</h2>
+        <p>Venue: Physically at Ngong Town Hall and virtually via Google Meet.</p>
+        <div class="media">
+          <iframe
+            class="responsive-iframe"
+            title="Ngong Town Hall map"
+            src="https://www.google.com/maps?q=Ngong+Town+Hall&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
 
-  <section class="fade-in">
-    <h2>Agenda</h2>
-    <ul>
-      <li>🌐 <strong>Keynote:</strong> Thrive Together: Building Resilient Futures</li>
-      <li>🗺️ <strong>Workshops:</strong> Mapping with OpenStreetMap</li>
-      <li>🎓 <strong>Student Showcase:</strong> GIS Projects</li>
-      <li>🤝 <strong>Networking & Refreshments</strong></li>
-    </ul>
-  </section>
+      <aside aria-labelledby="videos-heading">
+        <h3 id="videos-heading">GIS Day Videos</h3>
+        <div class="media">
+          <iframe
+            class="big-iframe"
+            title="GIS Day Story Map"
+            src="https://storymaps.arcgis.com/briefings/01e83d2e643b4606892b6cf3419f4dc0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </aside>
+    </section>
 
-  <footer class="fade-in">
-    <p>Questions? Email us at <a href="mailto:wanderaamos@gmail.com">wanderaamos@gmail.com</a></p>
-    <p>&copy; 2025 GIS Day Ngong</p>
+    <section class="fade-in" aria-labelledby="agenda-heading">
+      <h2 id="agenda-heading">Agenda</h2>
+      <ul>
+        <li>🌐 <strong>Keynote:</strong> Thrive Together: Building Resilient Futures</li>
+        <li>🗺️ <strong>Workshops:</strong> Mapping with OpenStreetMap</li>
+        <li>🎓 <strong>Student Showcase:</strong> GIS Projects</li>
+        <li>🤝 <strong>Networking & Refreshments</strong></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="fade-in" role="contentinfo">
+    <div class="container">
+      <p>Questions? Email us at <a href="mailto:wanderaamos@gmail.com">wanderaamos@gmail.com</a></p>
+      <p>&copy; 2025 GIS Day Ngong</p>
+    </div>
   </footer>
 
   <script>
-    const countdown = document.getElementById("countdown");
-    const targetDate = new Date("November 20, 2025 00:00:00").getTime();
+    (function () {
+      const countdownEl = document.getElementById('countdown');
+      if (!countdownEl) return;
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+      const targetDate = Date.parse('2025-11-20T00:00:00Z');
 
-      if (distance < 0) {
-        countdown.innerHTML = "🎉 GIS Day is here!";
-        return;
+      function pad(n) {
+        return String(n).padStart(2, '0');
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      function formatTime(ms) {
+        const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+        const days = Math.floor(totalSeconds / (3600 * 24));
+        const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        return `${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+      }
 
-      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
+      function update() {
+        const now = Date.now();
+        const distance = targetDate - now;
+        if (distance <= 0) {
+          countdownEl.textContent = '🎉 GIS Day is here!';
+          clearInterval(timer);
+          return;
+        }
+        countdownEl.textContent = formatTime(distance);
+      }
 
-    setInterval(updateCountdown, 1000);
+      update();
+      const timer = setInterval(update, 1000);
+    })();
   </script>
 
 </body>
 </html>
-
-
-
-
